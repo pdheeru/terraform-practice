@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.example</groupId>
-    <artifactId>simple-java-app</artifactId>
+    <artifactId>simple-java-webapp</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <packaging>jar</packaging>
+    <packaging>war</packaging>
 
-    <name>Simple Java App</name>
+    <name>Simple Java WebApp</name>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -17,6 +17,14 @@
     </properties>
 
     <dependencies>
+        <!-- Servlet API (provided by container like Tomcat) -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>4.0.1</version>
+            <scope>provided</scope>
+        </dependency>
+
         <!-- JUnit for testing -->
         <dependency>
             <groupId>junit</groupId>
@@ -28,18 +36,11 @@
 
     <build>
         <plugins>
-            <!-- Maven Compiler Plugin -->
+            <!-- Compiler plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.10.1</version>
-            </plugin>
-
-            <!-- Maven Surefire Plugin for running tests -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.0.0-M7</version>
             </plugin>
         </plugins>
     </build>
